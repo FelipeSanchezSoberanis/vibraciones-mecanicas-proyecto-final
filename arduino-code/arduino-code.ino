@@ -10,15 +10,11 @@ int ciclo_trabajo;
 long duracion;
 int distancia;
 
-int contador;
-
 void setup() {
     pinMode(pin_trig, OUTPUT);
     pinMode(pin_echo, INPUT);
     pinMode(pin_motor, OUTPUT);
     pinMode(pin_pot, INPUT);
-
-    contador = 0;
 
     Serial.begin(9600);
 }
@@ -37,10 +33,7 @@ void loop() {
     duracion = pulseIn(pin_echo, HIGH);
     distancia = duracion * 0.034 / 2;
 
-    if (contador == 9600 / 100) {
-        Serial.println(distancia);
-        contador = 0;
-    }
+    Serial.println(distancia);
 
-    contador += 1;
+    delay(100);
 }

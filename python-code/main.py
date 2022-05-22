@@ -32,7 +32,7 @@ def animate(_):
         ax.clear()
         ax.plot(xs, ys, label="Tiempo vs distancia")
 
-        plt.axis([1, None, 0, 40])
+        plt.axis([1, None, 10, 15])
 
     except ValueError:
         print("Error reading value from serial port")
